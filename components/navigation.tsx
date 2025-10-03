@@ -42,7 +42,7 @@ export function Navigation({ overviewRef, chooseRoleRef, aboutRef }: NavigationP
             activeSection === "about" ? "text-primary" : "text-foreground"
           }`}
         >
-          About Us
+          Our Mision
         </button>
       </div>
     </nav>

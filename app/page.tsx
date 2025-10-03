@@ -85,7 +85,7 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground mb-4 text-balance mt-20">
-            Breathing Rivers
+            BREATHING RIVERS
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed text-pretty">
             "Welcome to Breathing Rivers–An awareness journey through the world's greatest rivers, discovering stories
@@ -140,7 +140,7 @@ export default function Home() {
           <section ref={riverStorageRef} className="py-16 px-4 backdrop-blur-sm bg-background/60">
             <div className="container mx-auto max-w-6xl">
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">
-                River Water Storage
+                RIVER WATER STORAGE
               </h2>
               <div className="grid md:grid-cols-2 gap-8 items-stretch" style={{ perspective: "1200px" }}>
                 <div
@@ -193,7 +193,59 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+            </section>
+
+{/* NASA glopal temp */}
+<section className="py-16 px-4 backdrop-blur-sm bg-background/60">
+  <div className="container mx-auto max-w-6xl">
+    <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">
+      GLOBAL TEMPERATURE
+    </h2>
+    <div className="grid md:grid-cols-2 gap-8 items-stretch" style={{ perspective: "1200px" }}>
+      
+      <div
+        className="h-full transition-all duration-1000 rounded-2xl overflow-hidden"
+        style={{
+          transformStyle: "preserve-3d",
+          boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15), 0 12px 25px rgba(0, 0, 0, 0.1)",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateZ(25px) scale(1.02)"
+          e.currentTarget.style.boxShadow = "0 35px 70px rgba(0, 0, 0, 0.35), 0 18px 35px rgba(0, 0, 0, 0.25)"
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = ""
+          e.currentTarget.style.boxShadow = "0 25px 50px rgba(0, 0, 0, 0.15), 0 12px 25px rgba(0, 0, 0, 0.1)"
+        }}
+      >
+        <img
+          src="/temp.jpg"
+          alt="NASA River Water Storage by Hydrologic Region"
+          className="w-full h-full object-cover"
+        />
+      </div>      
+      <div
+        className="bg-background/70 backdrop-blur-md p-8 rounded-2xl border border-primary/20 h-full flex items-center transition-all duration-1000"
+        style={{
+          transformStyle: "preserve-3d",
+          boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15), 0 12px 25px rgba(0, 0, 0, 0.1)",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateZ(25px) scale(1.02)"
+          e.currentTarget.style.boxShadow = "0 35px 70px rgba(0, 0, 0, 0.35), 0 18px 35px rgba(0, 0, 0, 0.25)"
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = ""
+          e.currentTarget.style.boxShadow = "0 25px 50px rgba(0, 0, 0, 0.15), 0 12px 25px rgba(0, 0, 0, 0.1)"
+        }}
+      >
+        <p className="text-lg text-foreground leading-relaxed">
+         Since 1980, global temperatures have risen rapidly, reaching record highs in 2023 and 2024. Africa remains the hottest continent, making the Nile especially vulnerable as heat drives evaporation and reduces water supplies. The Amazon faces worsening droughts that threaten biodiversity, while the Yangtze suffers more intense floods and water shortages. These rivers reveal how rising global heat is reshaping vital freshwater systems worldwide.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
           {/* River Cards Section */}
           <section id="discover-rivers" className="py-16 px-4 backdrop-blur-sm bg-background/60">
@@ -202,7 +254,7 @@ export default function Home() {
                 Discover the Rivers
               </h2>
               <p className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto">
-                Three great rivers that shaped civilizations and cultures across continents
+                Let’s take a closer look at the risks and challenges these rivers face.
               </p>
               <RiverCards />
             </div>
@@ -376,18 +428,19 @@ export default function Home() {
             </div>
           </section>
 
-          {/* About Us Section */}
+          {/* our mision */}
           <section ref={aboutRef} id="about" className="py-20 px-4 backdrop-blur-sm bg-muted/50 scroll-mt-24">
             <div className="container mx-auto max-w-4xl">
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-foreground">About Us</h2>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-foreground">Our Mision</h2>
               <p className="text-lg text-muted-foreground leading-relaxed text-center mb-6">
                 Breathing Rivers is dedicated to raising awareness about the world's most important waterways. Our
                 mission is to educate, inspire, and mobilize people to appreciate and protect these vital natural
-                resources.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed text-center">
+                resources.                   
                 Through compelling storytelling, stunning visuals, and interactive experiences, we bring the majesty of
                 rivers to life and highlight their crucial role in sustaining life on Earth.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed text-center">
+              
               </p>
             </div>
           </section>

@@ -16,12 +16,16 @@ interface Question {
 const quizQuestions: Question[] = [
   {
     id: 1,
-    question: "What percentage of Earth's water is fresh water available for human use?",
-    options: ["Less than 1%", "About 10%", "About 25%", "About 50%"],
-    correctAnswer: 0,
+    question: "You are brushing your teeth. The water is running from the tap. What is the best thing to do?",
+    options: [
+      "Let the water flow so you can hear the nice sound.",
+      "Turn off the tap while you are brushing and turn it back on to rinse.",
+      "Try to brush your teeth faster than the water fills the sink.",
+      "Open the tap even more so the toothbrush gets cleaner.",
+    ],
+    correctAnswer: 1,
     explanation:
-      "Only about 0.5% of Earth's water is available fresh water. Most water is in oceans (97%) or frozen in glaciers.",
-    image: "/earth-water.jpg",
+      "Turning off the tap saves a lot of water. This helps protect the environment and keeps more water in our rivers and lakes.",
   },
   {
     id: 2,
@@ -30,7 +34,6 @@ const quizQuestions: Question[] = [
     correctAnswer: 1,
     explanation:
       "Toilet flushing typically uses the most water in households, accounting for about 30% of indoor water use.",
-    image: "/household-water.jpg",
   },
   {
     id: 3,
@@ -44,7 +47,6 @@ const quizQuestions: Question[] = [
     correctAnswer: 1,
     explanation:
       "Always pick up trash near rivers and dispose of it properly. Trash can harm aquatic life and pollute water sources.",
-    image: "/river-cleanup.jpg",
   },
   {
     id: 4,
@@ -53,7 +55,6 @@ const quizQuestions: Question[] = [
     correctAnswer: 3,
     explanation:
       "Plastic bottles can take 450 years or more to decompose, causing long-term pollution in rivers and oceans.",
-    image: "/plastic-pollution.jpg",
   },
   {
     id: 5,
@@ -62,7 +63,6 @@ const quizQuestions: Question[] = [
     correctAnswer: 1,
     explanation:
       "Watering early morning or evening reduces evaporation, ensuring plants get more water while conserving resources.",
-    image: "/watering-plants.jpg",
   },
   {
     id: 6,
@@ -76,7 +76,6 @@ const quizQuestions: Question[] = [
     correctAnswer: 2,
     explanation:
       "Planting trees along riverbanks prevents erosion, filters pollutants, and provides habitat for wildlife.",
-    image: "/river-trees.jpg",
   },
 ]
 
@@ -230,8 +229,9 @@ export default function StudentsPage() {
 
           <section className="pt-32 pb-16 px-4">
             <div className="container mx-auto max-w-6xl">
-              <h1 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-foreground text-center">
-                Quiz Complete!
+              <h1 className="text-5xl font-bold text-center mb-12 text-gray-800 -mt-8"
+          style={{ fontFamily: "Oswald, sans-serif" }}>
+                QUIZ COMPELETE!
               </h1>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
@@ -255,23 +255,27 @@ export default function StudentsPage() {
 
                 {/* What You Learned - Transparent Box */}
                 <div className="p-8 md:p-12 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-left">
-                  <h3 className="font-serif text-2xl font-bold mb-6 text-foreground text-center">What You Learned</h3>
+                  <h3 className="text-5xl font-bold text-center mb-12 text-gray-800 -mt-8"
+          style={{ fontFamily: "Oswald, sans-serif" }}>WHAT YOU LEARNED!</h3>
+                  
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
-                      <span className="text-primary font-bold text-xl"></span>
-                      <span className="text-foreground">Less than 1% of Earth's water is available for human use</span>
+                      <span className="text-primary font-bold text-xl">1.</span>
+                      <span className="text-foreground text-lg">
+                        Plastic bottles take 450+ years to decompose in water
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-primary font-bold text-xl"></span>
-                      <span className="text-foreground">Plastic bottles take 450+ years to decompose in water</span>
+                      <span className="text-primary font-bold text-xl">2.</span>
+                      <span className="text-foreground text-lg">
+                        Planting trees along riverbanks protects ecosystems
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-primary font-bold text-xl"></span>
-                      <span className="text-foreground">Planting trees along riverbanks protects ecosystems</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary font-bold text-xl"></span>
-                      <span className="text-foreground">Every action counts in protecting our water resources</span>
+                      <span className="text-primary font-bold text-xl">3.</span>
+                      <span className="text-foreground text-lg">
+                        Every action counts in protecting our water resources
+                      </span>
                     </li>
                   </ul>
                 </div>
