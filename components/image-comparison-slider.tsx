@@ -107,6 +107,16 @@ export default function ImageComparisonSlider({
           </div>
         </div>
       </div>
+
+      {/* Left Label - Mar 2022 */}
+      <div className="absolute bottom-4 left-4 bg-black/70 px-4 py-2 rounded-md">
+        <p className="text-white font-bold text-sm tracking-wide">Mar 2022</p>
+      </div>
+
+      {/* Right Label - May 2019 */}
+      <div className="absolute bottom-4 right-4 bg-black/70 px-4 py-2 rounded-md">
+        <p className="text-white font-bold text-sm tracking-wide">May 2019</p>
+      </div>
     </div>
   )
 }
