@@ -107,14 +107,14 @@ export default function NilePage() {
             onMouseLeave={() => setHoveredBox(null)}
           >
             <p className="text-white font-merri tracking-wide leading-relaxed">
-              The Amazon rainforest is home to the largest continuous stretch of tropical forest on Earth, producing
-              about 20% of the planet's oxygen. Its dense vegetation regulates rainfall patterns, absorbs vast amounts
-              of carbon dioxide, and sustains millions of species.
+              This global temperature map clearly shows that Africa stands out as the hottest continent on Earth.
+              Persistent high land surface temperatures increase evaporation rates and intensify drought conditions,
+              placing severe stress on freshwater resources.
             </p>
             <p className="text-white font-merri mt-6 leading-relaxed">
-              However, satellite observations of vegetation reveal alarming changes. Deforestation and human activities
-              are reducing the forest cover, threatening biodiversity and weakening one of Earth's most important
-              climate regulators.
+              For the Nile, Africa's longest river and a lifeline for millions, rising heat reduces water flow, affects
+              agricultural productivity, and heightens the challenges of water management. As temperatures continue to
+              climb, the Nile becomes increasingly vulnerable, making its preservation more critical than ever.
             </p>
           </div>
 
@@ -166,7 +166,7 @@ export default function NilePage() {
             onMouseLeave={() => setHoveredBox(null)}
           >
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-03%20073524-F3IHqax4inploVv7rRJVdmMN05X9If.png"
+              src="/images/design-mode/Screenshot%202025-10-03%20073524.png"
               alt="NASA FIRMS Fire Map of Nile Region"
               className="w-full h-full rounded object-cover"
             />
@@ -222,35 +222,26 @@ export default function NilePage() {
           className="text-5xl font-bold text-center mb-12 text-gray-800 -mt-8"
           style={{ fontFamily: "Oswald, sans-serif" }}
         >
-          HUMAN ACTIVITIES
+          FROM SAHARA TO THE NILE
         </h2>
 
         {/* الأعمدة المعكوسة */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-          {/* الصورة على اليسار */}
-          <div className="border-8 border-yellow-400 rounded-lg shadow-xl p-2 bg-yellow-50 flex w-full min-h-[400px]">
-            <ImageComparisonSlider
-              beforeImage="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-03%20033242-9wPBkwLngrLJ1s2bePCByoAsruotw8.png"
-              afterImage="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-03%20033209-NncPvly1Xh2YXPlbp8p9mkP8upRBBO.png"
-              beforeAlt="Nile River Temperature Map - Before"
-              afterAlt="Nile River Temperature Map - After"
-            />
-          </div>
-
-          {/* النص على اليمين */}
+          {/* النص على اليسار */}
           <div
             className="p-8 rounded-md flex flex-col w-full bg-cover bg-center relative overflow-hidden cursor-pointer"
             style={{
               backgroundImage: "url('/drought-background.jpg')",
-              transform: hoveredBox === "humanActivities" ? "translateZ(30px) scale(1.02)" : "translateZ(0) scale(1)",
+              transform:
+                hoveredBox === "From Sahara to the Nile" ? "translateZ(30px) scale(1.02)" : "translateZ(0) scale(1)",
               boxShadow:
-                hoveredBox === "humanActivities"
+                hoveredBox === "From Sahara to the Nile"
                   ? "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1)"
                   : "0 10px 15px -3px rgba(0, 0, 0, 0.3)",
               transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
               transformStyle: "preserve-3d",
             }}
-            onMouseEnter={() => setHoveredBox("humanActivities")}
+            onMouseEnter={() => setHoveredBox("From Sahara to the Nile")}
             onMouseLeave={() => setHoveredBox(null)}
           >
             {/* overlay لجعل النص واضح */}
@@ -258,15 +249,27 @@ export default function NilePage() {
 
             <div className="relative z-10">
               <p className="text-white font-merri tracking-wide leading-relaxed">
-                Over the past two decades, human activities such as forest burning for agriculture and global greenhouse
-                gas emissions have increased atmospheric dryness over the Amazon.
+                This comparison between 2019 and 2022 highlights the rise of dust across Africa, showing how North
+                Africa—especially the Sahara Desert—is one of the largest global dust sources. Winds carry this dust
+                south and east, reaching the Nile region in Egypt and Sudan.
               </p>
               <p className="text-white font-merri mt-6 leading-relaxed">
-                This reduces rainfall and soil moisture, weakening the forest's ability to supply water to the Amazon
-                River. Fires release aerosols like black carbon, which warm the atmosphere and disrupt cloud formation,
-                further decreasing river flow and affecting aquatic life and local communities.
+                Increased dust affects air quality and ecosystems along the river. When deposited on farmland, it can
+                alter soil fertility, and when settling in the Nile itself, it may impact aquatic environments. The
+                images show how broader climatic and environmental shifts in North Africa directly and indirectly
+                influence the Nile, a vital lifeline for millions.
               </p>
             </div>
+          </div>
+
+          {/* الصورة على اليمين */}
+          <div className="border-8 border-yellow-400 rounded-lg shadow-xl p-2 bg-yellow-50 flex w-full min-h-[400px]">
+            <ImageComparisonSlider
+              beforeImage="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-03%20033242-9wPBkwLngrLJ1s2bePCByoAsruotw8.png"
+              afterImage="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-03%20033209-NncPvly1Xh2YXPlbp8p9mkP8upRBBO.png"
+              beforeAlt="Nile River Temperature Map - Before"
+              afterAlt="Nile River Temperature Map - After"
+            />
           </div>
         </div>
       </section>

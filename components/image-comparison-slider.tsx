@@ -70,14 +70,19 @@ export default function ImageComparisonSlider({
       onMouseDown={handleMouseDown}
       onTouchStart={handleMouseDown}
     >
-      {/* After Image (Background) */}
-      <img
-        src={afterImage || "/placeholder.svg"}
-        alt={afterAlt}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      {/* After Image (Background) - May 2019 */}
+      <div className="absolute inset-0">
+        <img
+          src={afterImage || "/placeholder.svg"}
+          alt={afterAlt}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute bottom-4 right-4 bg-black/70 px-4 py-2 rounded-md pointer-events-none">
+          <p className="text-white font-bold text-sm tracking-wide">May 2019</p>
+        </div>
+      </div>
 
-      {/* Before Image (Foreground with clip) */}
+      {/* Before Image (Foreground with clip) - Mar 2022 */}
       <div
         className="absolute inset-0 overflow-hidden"
         style={{
@@ -89,6 +94,9 @@ export default function ImageComparisonSlider({
           alt={beforeAlt}
           className="absolute inset-0 w-full h-full object-cover"
         />
+        <div className="absolute bottom-4 left-4 bg-black/70 px-4 py-2 rounded-md pointer-events-none">
+          <p className="text-white font-bold text-sm tracking-wide">Mar 2022</p>
+        </div>
       </div>
 
       {/* Slider Line and Handle */}
@@ -106,16 +114,6 @@ export default function ImageComparisonSlider({
             <div className="w-0.5 h-4 bg-gray-400"></div>
           </div>
         </div>
-      </div>
-
-      {/* Left Label - Mar 2022 */}
-      <div className="absolute bottom-4 left-4 bg-black/70 px-4 py-2 rounded-md">
-        <p className="text-white font-bold text-sm tracking-wide">Mar 2022</p>
-      </div>
-
-      {/* Right Label - May 2019 */}
-      <div className="absolute bottom-4 right-4 bg-black/70 px-4 py-2 rounded-md">
-        <p className="text-white font-bold text-sm tracking-wide">May 2019</p>
       </div>
     </div>
   )
