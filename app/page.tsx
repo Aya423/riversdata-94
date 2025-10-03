@@ -208,7 +208,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Choose Your Role Section */}
+          {/* Choose Your Journey Section */}
           <section
             ref={chooseRoleRef}
             id="choose-role"
@@ -216,7 +216,7 @@ export default function Home() {
           >
             <div className="container mx-auto max-w-6xl relative z-10">
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
-                Choose Your Role
+                Choose Your Journey
               </h2>
               <div className="grid md:grid-cols-3 gap-8 md:gap-12" style={{ perspective: "1200px" }}>
                 <div

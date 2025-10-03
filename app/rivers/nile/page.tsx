@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import ImageComparisonSlider from "@/components/image-comparison-slider"
 
 export default function NilePage() {
   const router = useRouter()
@@ -82,7 +83,7 @@ export default function NilePage() {
       {/* النص + الفيديو */}
       <section className="container mx-auto max-w-7xl px-6 py-16">
         <h2
-          className="text-6xl font-bold text-center mb-12 text-gray-900 uppercase tracking-wider"
+          className="text-5xl font-bold text-center mb-12 text-gray-800 uppercase tracking-wider"
           style={{ fontFamily: "Oswald, sans-serif" }}
         >
           TEMPERATURE
@@ -137,7 +138,7 @@ export default function NilePage() {
           </audio>
         </div>
 
-        <div className="flex flex-col items-center mt-8">
+        <div className="flex flex-col items-center mt-12">
           {/* الخط */}
           <div className="w-full border-t-2 border-gray-300"></div>
         </div>
@@ -150,14 +151,25 @@ export default function NilePage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* خريطة الحرائق على اليسار */}
-          <div className="border-8 border-yellow-400 rounded-lg shadow-xl p-2 bg-yellow-50 flex w-full overflow-hidden">
-            <video className="w-full h-full rounded object-cover scale-110" autoPlay loop muted playsInline>
-              <source
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202025-10-03%20at%2006.59.36_5b759eec-Wn5Tx6M8CAxKmKYBtVxkR8l14VpAnv.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
+          <div
+            className="border-8 border-yellow-400 rounded-lg shadow-xl p-2 bg-yellow-50 flex w-full overflow-hidden cursor-pointer"
+            style={{
+              transform: hoveredBox === "firesImage" ? "translateZ(30px) scale(1.02)" : "translateZ(0) scale(1)",
+              boxShadow:
+                hoveredBox === "firesImage"
+                  ? "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1)"
+                  : "0 10px 15px -3px rgba(0, 0, 0, 0.3)",
+              transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+              transformStyle: "preserve-3d",
+            }}
+            onMouseEnter={() => setHoveredBox("firesImage")}
+            onMouseLeave={() => setHoveredBox(null)}
+          >
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-03%20073524-F3IHqax4inploVv7rRJVdmMN05X9If.png"
+              alt="NASA FIRMS Fire Map of Nile Region"
+              className="w-full h-full rounded object-cover"
+            />
           </div>
 
           <div
@@ -180,14 +192,15 @@ export default function NilePage() {
 
             <div className="relative z-10">
               <p className="text-white font-merri tracking-wide leading-relaxed">
-                Fires can occur naturally or due to human activity, affecting forests, grasslands, and wildlife. In the
-                Amazon, fires caused by deforestation and land clearing destroy forest and threaten countless species.
+                On October 17, 2014, NASA’s Terra satellite (MODIS) observed several small fires burning across the Nile
+                Delta, most likely linked to agricultural practices. While such fires are common after harvests, they
+                release large amounts of smoke and pollutants into the air.
               </p>
               <p className="text-white font-merri mt-6 leading-relaxed">
-                These fires also impact the Amazon River and its surrounding vegetation. Loss of forest cover reduces
-                the rainforest's ability to regulate rainfall, which can alter river flow and increase sediment in the
-                water. The weakened vegetation absorbs less carbon dioxide and disrupts the river ecosystem, affecting
-                both wildlife and the communities that depend on the Amazon for food, water, and resources.
+                These emissions can affect air quality for millions of people living around the Nile, contribute to
+                greenhouse gases, and add stress to an already vulnerable river system. Over time, repeated burning also
+                depletes soil quality, reducing agricultural productivity and increasing pressure on the Nile’s
+                freshwater resources.
               </p>
             </div>
           </div>
@@ -199,45 +212,6 @@ export default function NilePage() {
             <source src="/amazon-audio.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-          <div
-            className="bg-gray-100 p-8 rounded-md flex flex-col justify-center cursor-pointer"
-            style={{
-              transform: hoveredBox === "waterLevels" ? "translateZ(30px) scale(1.02)" : "translateZ(0) scale(1)",
-              boxShadow:
-                hoveredBox === "waterLevels"
-                  ? "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1)"
-                  : "0 10px 15px -3px rgba(0, 0, 0, 0.3)",
-              transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-              transformStyle: "preserve-3d",
-            }}
-            onMouseEnter={() => setHoveredBox("waterLevels")}
-            onMouseLeave={() => setHoveredBox(null)}
-          >
-            <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: "Oswald, sans-serif" }}>
-              Record Low Water Levels
-            </h3>
-            <p className="text-gray-700 font-merri leading-relaxed mb-4">
-              The Port of Manaus recorded a water level of 12.66 meters on October 4, 2024 - the lowest since records
-              began in 1902. This severe drought is directly linked to deforestation and fires in the Amazon.
-            </p>
-            <p className="text-gray-700 font-merri leading-relaxed">
-              As trees are cut down, the forest loses its ability to generate rainfall. Less vegetation means less
-              moisture, creating a dangerous cycle of drought and fire that threatens river transportation, communities,
-              and wildlife throughout the region.
-            </p>
-          </div>
-
-          {/* الصورة - الرسم البياني */}
-          <div className="border-4 border-gray-300 rounded-lg shadow-xl p-4 bg-white">
-            <img
-              src="/amazon-water-levels-graph.jpg"
-              alt="Amazon River Water Levels Graph"
-              className="w-full h-full rounded object-contain"
-            />
-          </div>
         </div>
 
         <div className="mt-8 w-full border-t-2 border-gray-300"></div>
@@ -254,8 +228,13 @@ export default function NilePage() {
         {/* الأعمدة المعكوسة */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* الصورة على اليسار */}
-          <div className="border-8 border-yellow-400 rounded-lg shadow-xl p-2 bg-yellow-50 flex w-full">
-            <img src="/amazon-river.jpg" alt="Amazon River" className="w-full h-full rounded object-cover" />
+          <div className="border-8 border-yellow-400 rounded-lg shadow-xl p-2 bg-yellow-50 flex w-full min-h-[400px]">
+            <ImageComparisonSlider
+              beforeImage="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-03%20033242-9wPBkwLngrLJ1s2bePCByoAsruotw8.png"
+              afterImage="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-03%20033209-NncPvly1Xh2YXPlbp8p9mkP8upRBBO.png"
+              beforeAlt="Nile River Temperature Map - Before"
+              afterAlt="Nile River Temperature Map - After"
+            />
           </div>
 
           {/* النص على اليمين */}
