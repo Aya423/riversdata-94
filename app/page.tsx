@@ -126,7 +126,7 @@ export default function Home() {
           {/* Overview Section */}
           <section ref={overviewRef} id="overview" className="py-20 px-4 backdrop-blur-sm bg-muted/50 scroll-mt-24">
             <div className="container mx-auto max-w-4xl">
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-foreground">Overview</h2>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-foreground">OVERVIEW</h2>
               <p className="text-lg text-muted-foreground leading-relaxed text-center mb-6">
                 Welcome to Breathing Rivers, an immersive journey through the world's most magnificent waterways. Our
                 platform brings together stories, facts, and experiences that showcase how rivers have shaped
@@ -251,7 +251,7 @@ export default function Home() {
           <section id="discover-rivers" className="py-16 px-4 backdrop-blur-sm bg-background/60">
             <div className="container mx-auto">
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-4 text-foreground">
-                Discover the Rivers
+                DISCOVER THE RIVER
               </h2>
               <p className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto">
                 Let’s take a closer look at the risks and challenges these rivers face.
@@ -268,7 +268,7 @@ export default function Home() {
           >
             <div className="container mx-auto max-w-6xl relative z-10">
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
-                Choose Your Journey
+                CHOOSE YOUR JOURNEY
               </h2>
               <div className="grid md:grid-cols-3 gap-8 md:gap-12" style={{ perspective: "1200px" }}>
                 <div
@@ -431,7 +431,7 @@ export default function Home() {
           {/* our mision */}
           <section ref={aboutRef} id="about" className="py-20 px-4 backdrop-blur-sm bg-muted/50 scroll-mt-24">
             <div className="container mx-auto max-w-4xl">
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-foreground">Our Mision</h2>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-foreground">OUR MISION</h2>
               <p className="text-lg text-muted-foreground leading-relaxed text-center mb-6">
                 Breathing Rivers is dedicated to raising awareness about the world's most important waterways. Our
                 mission is to educate, inspire, and mobilize people to appreciate and protect these vital natural
