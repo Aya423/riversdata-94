@@ -29,7 +29,7 @@ const rivers: River[] = [
     location: "South America",
     length: "6,400 km",
     description:
-      "The largest river in the world by discharge, heart of the Amazon rainforest, home to over 3,000 species of fish and unparalleled biodiversity",
+      "The largest in the world by discharge, the heart of the rainforest, and home to over 3,000 fish species and unparalleled biodiversity.",
     imageUrl: "/amazon.jpg",
   },
   {

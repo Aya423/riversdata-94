@@ -7,9 +7,11 @@ import { useRouter } from "next/navigation"
 export default function NilePage() {
   const router = useRouter()
   const [hoveredBox, setHoveredBox] = useState<string | null>(null)
+  const [showDescription, setShowDescription] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    setTimeout(() => setShowDescription(true), 300)
   }, [])
 
   const handleExploreMore = () => {
@@ -58,6 +60,22 @@ export default function NilePage() {
         <div className="relative text-center text-white px-4">
           <h1 className="font-serif text-5xl md:text-7xl font-bold drop-shadow-2xl">Nile River</h1>
           <p className="text-xl md:text-2xl mt-4 drop-shadow-lg">The Longest River in the World</p>
+
+          <div
+            className="mt-8 max-w-4xl mx-auto text-left"
+            style={{
+              opacity: showDescription ? 1 : 0,
+              transform: showDescription ? "translateX(0)" : "translateX(-50px)",
+              transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+            }}
+          >
+            <p className="text-lg md:text-xl leading-relaxed drop-shadow-lg font-light">
+              Stretching for about 6,650 km, the Nile flows through 11 African countries and has been the cradle of
+              ancient Egyptian civilization. It is the main source of freshwater for millions of people, supporting
+              agriculture, transport, and daily life across northeastern Africa. Today, the Nile remains a lifeline, but
+              faces growing stress from rising temperatures, population demands, and climate change.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -135,7 +153,7 @@ export default function NilePage() {
           <div className="border-8 border-yellow-400 rounded-lg shadow-xl p-2 bg-yellow-50 flex w-full overflow-hidden">
             <video className="w-full h-full rounded object-cover scale-110" autoPlay loop muted playsInline>
               <source
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202025-10-02%20at%2014.46.57_d400de67-cBBvkyryAT9MLPvMXUUTlXP7C1Xq1y.mp4"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202025-10-03%20at%2006.59.36_5b759eec-Wn5Tx6M8CAxKmKYBtVxkR8l14VpAnv.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.

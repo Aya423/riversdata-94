@@ -7,9 +7,11 @@ import { useRouter } from "next/navigation"
 export default function AmazonPage() {
   const router = useRouter()
   const [hoveredBox, setHoveredBox] = useState<string | null>(null)
+  const [showDescription, setShowDescription] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    setTimeout(() => setShowDescription(true), 300)
   }, [])
 
   const handleExploreMore = () => {
@@ -58,6 +60,18 @@ export default function AmazonPage() {
         <div className="relative text-center text-white px-4">
           <h1 className="font-serif text-5xl md:text-7xl font-bold drop-shadow-2xl">Amazon River</h1>
           <p className="text-xl md:text-2xl mt-4 drop-shadow-lg">The Largest River in the World</p>
+
+          <div className="mt-8 max-w-4xl mx-auto">
+            <p
+              className="text-left text-base md:text-lg leading-relaxed drop-shadow-lg transition-all duration-1000 ease-out"
+              style={{
+                opacity: showDescription ? 1 : 0,
+                transform: showDescription ? "translateX(0)" : "translateX(-50px)",
+              }}
+            >
+              Stretching over 6,400 km, the Amazon carries more water than any other river on Earth and drains the world’s largest rainforest. It provides about 20% of the planet’s freshwater outflow and sustains unmatched biodiversity. More than 30 million people, including Indigenous communities, rely on it for food, transport, and culture.
+            </p>
+          </div>
         </div>
       </section>
 
